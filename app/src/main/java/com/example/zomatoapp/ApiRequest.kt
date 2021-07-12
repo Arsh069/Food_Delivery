@@ -14,5 +14,5 @@ interface ApiRequest {
     suspend fun getFood(
                         @Query("lat") lat:Double,
                         @Query("lon") lon:Double,
-                        @Header("UserKey")userKey: String) :Response<FoodApi>
+                        @Header("user-key")userKey: String) :Response<FoodApi>
 }
