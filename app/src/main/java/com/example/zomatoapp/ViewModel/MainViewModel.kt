@@ -20,10 +20,11 @@ class MainViewModel(private val repository: Repository):ViewModel() {
         this.food= MutableLiveData()
     }
 
-    fun getFood(lat:Int,lon:Int,userKey:String){
+    fun getFood(lat:Double,lon:Double,userKey:String){
         viewModelScope.launch {
             val food1=repository.getPost(lat,lon, userKey)
             food.value=food1
+            Log.d("HELLO",food1.body().toString())
         }
     }
 }
