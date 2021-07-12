@@ -11,8 +11,8 @@ class Repository(var context: Context) {
     val showProgress = MutableLiveData<Boolean>()
     var food = MutableLiveData<FoodApi>()
 
-    suspend fun getPost(lat:Int,lon:Int,userKey:String):Response<FoodApi>{
+    suspend fun getPost(lat:Double,lon:Double,userKey:String):Response<FoodApi>{
         showProgress.value=true
-        return FoodService.foodInstance.getFood(userKey,lat,lon)
+        return FoodService.foodInstance.getFood(lat,lon,userKey)
     }
 }
