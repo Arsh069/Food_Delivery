@@ -44,7 +44,7 @@ class HomeFragment : Fragment() {
         val vmf= MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this,vmf).get(MainViewModel::class.java)
 
-        viewModel.getFood(26.8467.toInt(), 80.9462.toInt(),"f5cd87e4deca15ff2a49d74ce3328e1b")
+        viewModel.getFood(26.8467, 80.9462,"f5cd87e4deca15ff2a49d74ce3328e1b")
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = foodAdapter
