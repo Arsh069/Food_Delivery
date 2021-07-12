@@ -11,7 +11,8 @@ import java.nio.channels.spi.AbstractSelectionKey
 
 interface ApiRequest {
     @GET("/api/v2.1/collections")
-    suspend fun getFood(@Header("UserKey")userKey: String,
-                        @Query("lat") lat:Int,
-                        @Query("lon") lon:Int) :Response<FoodApi>
+    suspend fun getFood(
+                        @Query("lat") lat:Double,
+                        @Query("lon") lon:Double,
+                        @Header("UserKey")userKey: String) :Response<FoodApi>
 }
